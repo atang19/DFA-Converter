@@ -45,14 +45,13 @@ public class DFAMap{
 				currentState = stateList.get(currentState).edgesOut.get(input);
 			}
 		}
-		if(stateList.get(currentState).isFinal && dead == false){
-			System.out.println("The string is accepted in the language.");
-		}
-		else if (dead == false){
-			System.out.println("The string terminates in a non-final state.");
-		}
-		else{
-
+		if(dead == false){
+			if(stateList.get(currentState).isFinal){
+				System.out.println("The string is accepted in the language.");
+			}
+			else{
+				System.out.println("The string terminates in a non-final state.");
+			}
 		}
 	}
 
